@@ -1,0 +1,17 @@
+name: Integration Test
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: OnlineGymnasium/reflect-python-action@master
+        with:
+          REFLECT_API_KEY: ${{secrets.REFLECT_API_KEY}}
+          REFLECT_SUITE_ID: ${{secrets.REFLECT_SUITE_ID}}
+      - name: Check outputs and modified files
+        run: test "${{ steps.selftest.outputs.warnings }}" == "1"

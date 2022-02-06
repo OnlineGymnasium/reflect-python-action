@@ -1,0 +1,16 @@
+name: "Reflect.run Python Github Action"
+description: "Check the execution status of tests"
+author: "Andrey Sharypov"
+inputs:
+  REFLECT_API_KEY:
+    description: "Reflect API KEY"
+    required: true
+  REFLECT_SUITE_ID:
+    description: "Reflect Suite ID"
+    required: true
+outputs:
+  reusltOutput:
+    description: "Output from the action"
+runs:
+  using: "docker"
+  image: "Dockerfile"
