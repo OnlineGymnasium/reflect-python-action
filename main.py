@@ -6,8 +6,8 @@ import time
 
 def main():
     HOST = "https://api.reflect.run/v1"
-    headers = {"X-API-KEY": os.environ["REFLECT_API_KEY"]}
-    suite_id = os.environ["REFLECT_SUITE_ID"]
+    headers = {"X-API-KEY": os.environ["INPUT_REFLECT_API_KEY"]}
+    suite_id = os.environ["INPUT_REFLECT_SUITE_ID"]
 
     execute_res = requests.post(f'{HOST}/suites/{suite_id}/executions', headers=headers)
     execution_id = execute_res.json()['executionId']

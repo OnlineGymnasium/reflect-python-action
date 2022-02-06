@@ -8,7 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Self test
-        id: selftest
         uses: OnlineGymnasium/reflect-python-action@main
         with:
           REFLECT_API_KEY: ${{secrets.REFLECT_API_KEY}}
