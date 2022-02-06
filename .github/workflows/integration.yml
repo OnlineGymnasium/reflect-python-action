@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
-        uses: OnlineGymnasium/reflect-python-action@master
+        uses: OnlineGymnasium/reflect-python-action@main
         with:
           REFLECT_API_KEY: ${{secrets.REFLECT_API_KEY}}
           REFLECT_SUITE_ID: ${{secrets.REFLECT_SUITE_ID}}
