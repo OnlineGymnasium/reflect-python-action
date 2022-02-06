@@ -2,6 +2,7 @@ import os
 import sys
 import requests
 import time
+import colorful
 
 
 def main():
@@ -23,9 +24,11 @@ def main():
         else:
             status = execution_status_json["status"]
             url = execution_status_json["url"]
-            print(f'Execution is finished\nStatus is {status}\nTests URL {url}')
+            message = f'Execution is finished\nStatus is {status}\nTests URL {url}'
             if status in ['passed', 'pending', 'canceled']:
+                print(colorful.green(message))
                 sys.exit(0)
+            print(colorful.red(message))
             sys.exit(1)
 
 
