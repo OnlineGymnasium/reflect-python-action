@@ -15,5 +15,4 @@ jobs:
         with:
           REFLECT_API_KEY: ${{secrets.REFLECT_API_KEY}}
           REFLECT_SUITE_ID: ${{secrets.REFLECT_SUITE_ID}}
-      - name: Check outputs and modified files
-        run: test "${{ steps.selftest.outputs.warnings }}" == "1"
+
