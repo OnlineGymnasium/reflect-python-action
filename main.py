@@ -16,7 +16,7 @@ def main():
     is_finished = False
     while not is_finished:
         time.sleep(10)
-        execution_status_res = requests.get(f'{HOST}/suites/lms/executions/{execution_id}', headers=headers)
+        execution_status_res = requests.get(f'{HOST}/suites/{suite_id}/executions/{execution_id}', headers=headers)
         execution_status_json = execution_status_res.json()
         is_finished = execution_status_json['isFinished']
         if not is_finished:
